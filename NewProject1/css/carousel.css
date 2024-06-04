@@ -1,0 +1,274 @@
+.carousel {
+    position: relative;
+    height: 600px;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 80px;
+    box-shadow: 10px 10px 5px #aaaaaa ;
+}
+
+.carousel_image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel_track-container {
+    background-color: lightgreen;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel_track {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    height: 100%;
+    transition: transform 0.4s ease-in;
+}
+
+.carousel_slide {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.carousel_button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    transition: ease 0.4s;
+}
+
+.carousel_button:hover {
+    background-color: hsl(223 83% 30% / .4);
+    border-radius: 100%;
+    box-shadow: 0 0 5.625px 2.0625px hsl(223 83% 30% / .4);
+    transition: ease 0.4s;
+    scale: 1.2;
+}
+
+.carousel_button--left {
+    left: -80px;
+}
+
+.carousel_button--right {
+    right: -80px;
+}
+
+.carousel_button img {
+    width: 45px;
+}
+
+.carousel_nav {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.carousel_indicator {
+    border: hsl(0 0% 100% / 0.5) solid 2px;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background: #eaeaea;
+    margin: 0 20px;
+    cursor: pointer;
+    transition: ease 0.4s;
+    margin-top: -50px;
+    display: flex;
+    position: sticky;
+}
+
+.carousel_indicator:hover {
+    background-color: hsl(0 0% 100% / 0.6);
+    border-radius: 100%;
+    transition: ease 0.5s;
+    scale: 1.5;
+}
+
+.carousel_indicator.current-slide {
+    background: hsl(0 0% 100% / 0.5);
+    border: hsl(0 0% 100% / 0.5) solid 2px;
+}
+
+.carousel_indicator.current-slide:hover {
+    background-color: hsl(0 0% 100% / 0.6);
+    border-radius: 100%;
+    transition: ease 0.5s;
+    scale: 1.5;
+}
+
+:root {
+    --bg: hsl(0, 0%, 92%);
+    --button-text: hsl(0 0% 100%);
+    --button-1-surface: hsl(223, 83%, 30%);
+    --button-2-surface: hsl(41,96%,56%);
+    --body-bg: hsl(0, 0%, 92%);
+    --nav-bg: linear-gradient(90deg, rgba(13,49,141,1) 0%, rgba(22,35,107,1) 50%, rgba(15,24,85,1) 100%);
+    --gradient: linear-gradient(90deg, rgba(0,191,255,1) 0%, rgba(7,144,232,1) 25%, rgba(14,97,209,1) 50%, rgba(20,50,186,1) 75%, rgba(27,3,163,1) 100%);
+    --gradient-scroll: linear-gradient(to bottom right, rgba(0,191,255,1) 0%, rgba(7,144,232,1) 25%, rgba(14,97,209,1) 50%, rgba(20,50,186,1) 75%, rgba(27,3,163,1) 100%);
+    --card-background: hsl(0, 0%, 100%);
+    --card-text: hsl(0, 0%, 100%);
+    --card-accent: hsl(223, 83%, 30%);
+}
+
+::-webkit-scrollbar {
+    width: .75em;
+}
+
+::-webkit-scrollbar-track {
+    background: #eaeaea;
+    border-radius: 100vw;
+    margin-block: .125em;
+}
+
+::-webkit-scrollbar-thumb {
+    border: .125em solid #eaeaea;
+    border-radius: 100vw;
+    background-image: var(--gradient-scroll);
+    background-size: 400%;
+    animation: thumb-animation 1s infinite alternate;
+}
+* {
+    box-sizing: border-box;
+}
+html {
+    font-family: "Arial", sans-serif;
+}
+body     {
+    margin: 0;
+    font-size: 1.25rem;
+    background: var(--body-bg);
+    color: black;
+    display: grid;
+    grid-template-columns: 15rem 1fr;
+    gap: 4rem;
+    min-height: 100vh;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    height: 100%;
+    background-image: var(--nav-bg);
+    background-size: 400%;
+    animation: big-animation 5s infinite alternate;
+}
+
+@keyframes big-animation {
+    0% {
+        background-position: left;
+    }
+    100% {
+        background-position: right;
+    }
+}
+
+.nav-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    display: grid;
+    gap: 4rem;
+    padding-block: 2rem;
+    font: 2rem;
+}
+
+.nav-list li {
+    padding: 1rem 2rem;
+    margin-left: 2rem;
+    border-radius: 100vw 0 0 100vw;
+}
+
+.nav-list li:hover {
+    background-color: rgba(10,15,75, 0.8);
+    color: #ffffff;
+    filter: brightness(1.25);
+    position: relative;
+}
+
+.nav-list li.active {
+    view-transition-name: activeNavTab;
+    background-color: var(--body-bg);
+    color: #000;
+    position: relative;
+}
+
+.nav-list li::nth-child(1) a {
+    view-transition-name: navLink-1;
+}
+
+.nav-list li::nth-child(2) a {
+    view-transition-name: navLink-1;
+}
+
+.nav-list li::nth-child(3) a {
+    view-transition-name: navLink-1;
+}
+
+.nav-list li::nth-child(4) a {
+    view-transition-name: navLink-1;
+}
+
+.nav-list li::nth-child(5) a {
+    view-transition-name: navLink-1;
+}
+
+::view-transition-group(activeNavTab) {
+    animation-duration: 500ms;
+    animation-timing-function: ease;
+}
+
+.nav-list li.active::before,
+.nav-list li.active::after {
+    --border-radius: 2rem;
+    
+    content: '';
+    position: absolute;
+    width: var(--border-radius);
+    height: var(--border-radius);
+    right: 0;
+    background: transparent;
+}
+
+.nav-list li.active::before {
+    top: calc(var(--border-radius) * -1);
+    border-radius: 0 0 100vw 0;
+    box-shadow: 10px 10px 0 10px var(--body-bg);  
+}
+.nav-list li.active::after {
+    bottom: calc(var(--border-radius) * -1);
+    border-radius: 0 100vw 0 0;
+    box-shadow: 10px -10px 0 10px var(--body-bg);
+}
+
+.nav-list li.active:hover {
+    filter: brightness(1);
+}
+.nav-list li.active:hover {
+    filter: brightness(1);
+}
+
+.nav-list li.active a{
+    color: #000;
+}
+
+.nav-list a {
+    color: #fff;
+    display: block;
+    text-decoration: none;
+    position: relative;
+    z-index: 10;
+}
+.is-hidden {
+    display: none;
+}

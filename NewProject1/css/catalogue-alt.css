@@ -1,0 +1,275 @@
+:root {
+    --bg: hsl(0, 0%, 92%);
+    --button-text: hsl(0 0% 100%);
+    --button-1-surface: hsl(223, 83%, 30%);
+    --button-2-surface: hsl(41,96%,56%);
+    --body-bg: hsl(0, 0%, 92%);
+    --nav-bg: linear-gradient(90deg, rgba(13,49,141,1) 0%, rgba(22,35,107,1) 50%, rgba(15,24,85,1) 100%);
+    --gradient: linear-gradient(90deg, rgba(0,191,255,1) 0%, rgba(7,144,232,1) 25%, rgba(14,97,209,1) 50%, rgba(20,50,186,1) 75%, rgba(27,3,163,1) 100%);
+    --gradient-scroll: linear-gradient(to bottom right, rgba(0,191,255,1) 0%, rgba(7,144,232,1) 25%, rgba(14,97,209,1) 50%, rgba(20,50,186,1) 75%, rgba(27,3,163,1) 100%);
+    --card-background: hsl(0, 0%, 100%);
+    --card-text: hsl(0, 0%, 100%);
+    --card-accent: hsl(223, 83%, 30%);
+}
+
+::-webkit-scrollbar {
+    width: .75em;
+}
+
+::-webkit-scrollbar-track {
+    background: #eaeaea;
+    border-radius: 100vw;
+    margin-block: .125em;
+}
+
+::-webkit-scrollbar-thumb {
+    border: .125em solid #eaeaea;
+    border-radius: 100vw;
+    background-image: var(--gradient-scroll);
+    background-size: 400%;
+    animation: thumb-animation 1s infinite alternate;
+}
+* {
+    box-sizing: border-box;
+}
+.feature-content{
+    background-color: white;
+    padding: 40px;
+    color: #0d318d;
+    text-decoration: none;
+    padding-left: 70px;
+    padding-right: 70px;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 20px rgba(0,0,0,0.5);
+}
+.feature-content h2 {
+    background-image: var(--gradient); /* Apply gradient background */
+    background-size: 400%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* Ensure the text color is transparent to show the background */
+    animation: big-animation 20s infinite alternate;
+    text-align: center;
+}
+.main-content{
+    background-color: white;
+    margin-top: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-radius: 20px;
+    text-decoration: none;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 20px rgba(0,0,0,0.5);
+}
+
+.main-content h2 {
+    color: transparent;
+    background-image: var(--gradient);
+    animation: big-animation 20s infinite alternate;
+    background-size: 400%;
+    background-clip: text;
+    text-align: center;
+}
+.items{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 60px;
+    margin-top: 40px;
+    text-decoration: none;
+    position: sticky;
+    display: flex;
+}
+.main-content .items{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 40px;
+    margin-top: 40px;
+    position: flex;
+}
+.items img {
+    width: 181.1111111111111px;
+  height: 290px;
+}
+.Item{
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+box-shadow: 0 0 11.25px 4.125px rgba(0,0,0,0.5);
+border-radius: 10px;
+padding: 10px;
+margin-bottom: 20px;
+    background-image: var(--gradient);
+    animation: big-animation 20s infinite alternate;
+    background-size: 400%;
+    border-radius: 10px;
+text-decoration: none;
+color: white;
+transition: 0.4s ease;
+}
+.Item img{
+    max-width: 100%;
+    margin-bottom: 10px;
+}
+.Item:hover,
+.Items:focus{
+    box-shadow: 0 0 22.5px 8.25px transparent;
+    border-color: transparent;
+    transition: 0.4s ease;
+    scale: 1.1;
+}
+.Item h3{
+    font-size: 24px;
+    margin-top: 0px;
+    color: #eaeaea;
+    text-decoration: none;
+}
+.Item p{
+    margin-top: 5px;
+    color: #eaeaea;
+    text-decoration: none;
+}
+.Item a:link{
+  text-decoration: none;
+}
+.Item a:visited{
+  text-decoration: none;
+}
+.Item a:hover {
+  color: #53628B;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: white;
+    place-items: center;
+    box-shadow: inset 0px 0px 20px rgba(0,0,0,0.5);
+    margin-left: 80px; 
+    margin-right: 80px;
+    z-index: 1000;
+    border-radius: 20px;
+    margin-top: 350px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.footer-container {
+    padding-bottom: 20px; 
+}
+
+.button {
+    margin-top: 10px;
+    margin: 10px;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: underline;
+    color: transparent;
+    background-image: var(--gradient);
+    background-clip: text;
+    padding: .5em 1.25em;
+    font-size: 30px;
+    animation: big-animation 20s infinite alternate;
+    background-size: 400%;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: scale 500ms ease;
+}
+
+.button:hover,
+.button:focus {
+    color: white;
+    background-clip: unset;
+    background-image: var(--gradient);
+    animation: big-animation 20s infinite alternate;
+    background-size: 400%;
+    scale: 1.1;
+}
+
+.main-content-alt h1 {
+    position: relative;
+    margin: 0 0 0.5em;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 4rem;
+    line-height: 0.8;
+    display: inline-block;
+    background-image: var(--gradient); /* Apply gradient background */
+    background-size: 400%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* Ensure the text color is transparent to show the background */
+    animation: big-animation 20s infinite alternate;
+}
+.alt {
+    background-color: #eaeaea;
+    padding: 50px 40px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 40px;
+    background: white;
+    margin-bottom: 50px;
+    border-radius: 20px;
+    box-shadow: inset 0px 0px 20px rgba(0,0,0,0.5);
+    left: 0;
+    right: 0;
+}
+
+.main-content-alt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    flex: 1; /* Ensure main content takes up remaining space */
+}
+.blanksapce {
+    opacity: 0;
+}
+html {
+    font-family: "Arial", sans-serif;
+    background-image: var(--gradient);
+    background-size: 400%;
+    animation: big-animation 20s infinite alternate;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    font-size: 1.25rem;
+    background: var(--body-bg);
+    color: black;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    min-height: 100vh;
+    overflow-y: auto;
+    background: transparent;
+    perspective: 1000px;
+}
+@keyframes big-animation {
+    0% {
+        background-position: left;
+    }
+    100% {
+        background-position: right;
+    }
+}
+
+@keyframes thumb-animation {
+    0% {
+        background-position: left;
+    }
+    100% {
+        background-position: right;
+    }
+}

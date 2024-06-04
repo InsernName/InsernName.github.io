@@ -1,0 +1,400 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    margin: 0;
+    min-height: 100vh;
+
+    line-height: 1.6;
+    background: var(--body-bg);
+    font-family: "Arial", sans-serif;
+    color: black;
+    display: grid;
+    grid-template-columns: 15rem 1fr;
+    gap: 4rem;
+    perspective: 1000px;
+}
+
+section {
+    place-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.card {
+    color: var(--card-text);
+    background-image: url("../images/Warriors.png");
+    background-size: cover;
+    padding: 12rem 0 0;
+    max-width: 51ch;
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: transform 500ms ease;
+    margin-top: 100px;
+}
+
+.card:hover,
+.card:focus-within {
+    transform: scale(1.05);
+}
+
+.card-content {
+    --padding: 2rem;
+    padding: var(--padding);
+    background: linear-gradient(
+        hsl(0 0% 0% / 0),
+        hsl(0 0% 0% / .2) 40%,
+        hsl(0 0% 0% / 1)
+    );
+}
+
+.card-title {
+    position: relative;
+    width: max-content;
+    font-size: 3rem;
+}
+
+.card-title::after {
+    content: '';
+    position: absolute;
+    height: 5px;
+    left: calc(var(--padding) * -1);
+    bottom: -2px;
+    width: calc(100% + var(--padding));
+    background: var(--card-accent);
+    transform-origin: left;
+    transition: transform 500ms ease;
+}
+
+.card:hover .card-title::after,
+.card:focus-within .card-title::after {
+    transform: scaleX(1);
+    transition-delay: 800ms;
+}
+
+.card-body {
+    color: rgb(255, 255, 255 / 0.85);
+}
+
+@media (hover) {
+    .card-content{
+        transform: translateY(60%);
+        transition: transform 500ms ease;
+    }
+
+    .card:hover .card-content,
+    .card:focus-within .card-content {
+        transform: translateY(0);
+        transition-delay: 500ms;
+    }
+
+    .card:focus-within .card-content {
+        transition-duration: 0ms;
+    }
+
+    .card-content > *:not(.card-title) {
+        opacity: 0;
+        transition: opacity 500ms linear;
+    }
+
+    .card:hover .card-content > *:not(.card-title),
+    .card:focus-within .card-content > *:not(.card-title) {
+        opacity: 1;
+        transition-delay: 900ms;
+    }
+
+    .card:focus-within .card-content > *:not(.card-title) {
+        transition-delay: 500ms;
+    }
+
+    .card-title::after {
+        transform: scaleX(0);
+    }
+}
+
+.button {
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    color: var(--card-background);
+    background-color: var(--card-accent);
+    padding: .5em 1.25em;
+    border-radius: .5em;
+}
+
+.button:hover,
+.button:focus {
+    background-color: var(--card-text);
+    color: var(--card-accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms
+        !important;
+        animation-iteration-count: 1
+        !important;
+        transition-duration: 0.01ms
+        !important;
+        scroll-behavior: auto
+        !important;
+        transition-delay: 0ms
+        !important;
+    }
+}
+
+:root {
+    --bg: hsl(0, 0%, 92%);
+    --button-text: hsl(0 0% 100%);
+    --button-1-surface: hsl(223, 83%, 30%);
+    --button-2-surface: hsl(41,96%,56%);
+    --body-bg: hsl(0, 0%, 92%);
+    --nav-bg: linear-gradient(90deg, rgba(13,49,141,1) 0%, rgba(22,35,107,1) 50%, rgba(15,24,85,1) 100%);
+    --gradient: linear-gradient(90deg, rgba(0,191,255,1) 0%, rgba(7,144,232,1) 25%, rgba(14,97,209,1) 50%, rgba(20,50,186,1) 75%, rgba(27,3,163,1) 100%);
+    --gradient-scroll: linear-gradient(to bottom right, rgba(0,191,255,1) 0%, rgba(7,144,232,1) 25%, rgba(14,97,209,1) 50%, rgba(20,50,186,1) 75%, rgba(27,3,163,1) 100%);
+    --card-background: hsl(0, 0%, 100%);
+    --card-text: hsl(0, 0%, 100%);
+    --card-accent: hsl(223, 83%, 30%);
+    --timing: 400ms;
+    --rotation: 20deg;
+}
+
+::-webkit-scrollbar {
+    width: .75em;
+}
+
+::-webkit-scrollbar-track {
+    background: #eaeaea;
+    border-radius: 100vw;
+    margin-block: .125em;
+}
+
+::-webkit-scrollbar-thumb {
+    border: .125em solid #eaeaea;
+    border-radius: 100vw;
+    background-image: var(--gradient-scroll);
+    background-size: 400%;
+    animation: thumb-animation 1s infinite alternate;
+}
+* {
+    box-sizing: border-box;
+}
+html {
+    font-family: "Arial", sans-serif;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    font-size: 1.25rem;
+    line-height: normal;
+    height: 100%;
+    background-image: var(--nav-bg);
+    background-size: 400%;
+    animation: big-animation 5s infinite alternate;
+}
+
+@keyframes big-animation {
+    0% {
+        background-position: left;
+    }
+    100% {
+        background-position: right;
+    }
+}
+
+.nav-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    display: grid;
+    gap: 4rem;
+    padding-block: 2rem;
+    font: 2rem;
+}
+
+.nav-list li {
+    padding: 1rem 2rem;
+    margin-left: 2rem;
+    border-radius: 100vw 0 0 100vw;
+}
+
+.nav-list li:hover {
+    background-color: rgba(10,15,75, 0.8);
+    filter: brightness(1.25);
+    color: #ffffff;
+    position: relative;
+}
+
+.nav-list li.active {
+    view-transition-name: activeNavTab;
+    background-color: var(--body-bg);
+    color: #000;
+    position: relative;
+}
+
+.nav-list li::nth-child(1) a {
+    view-transition-name: navLink-1;
+}
+
+.nav-list li::nth-child(2) a {
+    view-transition-name: navLink-1;
+}
+
+.nav-list li::nth-child(3) a {
+    view-transition-name: navLink-1;
+}
+
+.nav-list li::nth-child(4) a {
+    view-transition-name: navLink-1;
+}
+
+.nav-list li::nth-child(5) a {
+    view-transition-name: navLink-1;
+}
+
+::view-transition-group(activeNavTab) {
+    animation-duration: 500ms;
+    animation-timing-function: ease;
+}
+
+.nav-list li.active::before,
+.nav-list li.active::after {
+    --border-radius: 2rem;
+    
+    content: '';
+    position: absolute;
+    width: var(--border-radius);
+    height: var(--border-radius);
+    right: 0;
+    background: transparent;
+}
+
+.nav-list li.active::before {
+    top: calc(var(--border-radius) * -1);
+    border-radius: 0 0 100vw 0;
+    box-shadow: 10px 10px 0 10px var(--body-bg);  
+}
+.nav-list li.active::after {
+    bottom: calc(var(--border-radius) * -1);
+    border-radius: 0 100vw 0 0;
+    box-shadow: 10px -10px 0 10px var(--body-bg);
+}
+
+.nav-list li.active:hover {
+    filter: brightness(1);
+}
+.nav-list li.active:hover {
+    filter: brightness(1);
+}
+
+.nav-list li.active a{
+    color: #000;
+}
+
+.nav-list a {
+    color: #fff;
+    display: block;
+    text-decoration: none;
+    position: relative;
+    z-index: 10;
+}
+
+img {
+    max-width: 100%;
+}
+
+.ahsoka {
+    margin-top: 100px;
+    margin-bottom: 80px;
+    width: 500px;
+    aspect-ratio: 12 / 16;
+    /* background-image: url("/assets/yoda-on-dagobah.jpg"); */
+    position: relative;
+    transform-style: preserve-3d;
+    transition: rotate var(--timing) ease;
+  }
+  
+  .ahsoka:hover {
+    rotate: x var(--rotation);
+  }
+  
+  .ahsoka::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 100;
+    background-image: radial-gradient(circle, transparent 150px, black);
+    opacity: 0;
+    transition: opacity var(--timing);
+  }
+  
+  .ahsoka:hover::before {
+    opacity: 1;
+  }
+  
+  .ahsoka::after {
+    content: "";
+    position: absolute;
+    inset: 80% 0.5rem 0.5rem;
+    translate: 0;
+    transform: translateZ(-100px);
+    background: black;
+    filter: blur(1rem);
+    z-index: 1;
+    transition: rotate var(--timing), translate var(--timing);
+  }
+  
+  .ahsoka:hover::after {
+    rotate: x calc(var(--rotation) * -1);
+    translate: 0 60px;
+  }
+  
+  .bg-image {
+    position: absolute;
+    z-index: 10;
+    height: 100%;
+    object-fit: cover;
+    object-position:  center;
+  }
+  
+  .logo,
+  .front-image {
+    position: absolute;
+  }
+  
+  .logo {
+    z-index: 1000;
+    width: 75%;
+    margin-inline: auto;
+    inset: auto 0 2rem;
+    transform: translateY(0rem) translateZ(20px);
+    transition: var(--timing);
+  }
+  
+  .ahsoka:hover .logo {
+    transform: translateY(-2rem) translateZ(20px);
+    rotate: x calc(var(--rotation) * -1);
+  }
+  
+  .front-image {
+    scale: 1.125;
+    transform-origin: bottom;
+    opacity: 0;
+    z-index: 100;
+    transition: var(--timing);
+  }
+  
+  .ahsoka:hover .front-image {
+    opacity: 1;
+    transform: translateY(-2rem) translateZ(-10px);
+    rotate: x calc(var(--rotation) * -1);
+  }
+  

@@ -1,0 +1,275 @@
+.carousel {
+    position: relative;
+    height: 600px;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 80px;
+}
+
+.carousel_image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel_track-container {
+    background-color: lightgreen;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel_track {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    height: 100%;
+    transition: transform 0.4s ease-in;
+}
+
+.carousel_slide {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.carousel_button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    transition: ease 0.4s;
+    border-radius: 20px;
+}
+
+.carousel_button:hover,
+.carousel_button:focus {
+    background-color: hsl(223 83% 30% / .4);
+    border-radius: 20px;
+    transition: ease 0.4s;
+    padding: 5px;
+}
+
+.carousel_button--left {
+    left: -80px;
+}
+
+.carousel_button--right {
+    right: -80px;
+}
+
+.carousel_button img {
+    width: 45px;
+    filter: invert(1);
+}
+
+.carousel_nav {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    margin-top: 80px; 
+}
+
+.carousel_indicator {
+    border: hsl(0 0% 0% / 0.5) solid 2px;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background: hsl(0 0% 0% / 0.6);
+    margin: 0 20px;
+    cursor: pointer;
+    transition: ease 0.4s;
+    margin-top: -50px;
+    display: flex;
+    position: sticky;
+}
+
+.carousel_indicator:hover {
+    background-color: hsl(0 0% 100% / 0.5);
+    border-radius: 100%;
+    transition: ease 0.5s;
+    scale: 1.5;
+}
+
+.carousel_indicator.current-slide {
+    background: hsl(0 0% 100% / 0.5);
+    border: hsl(0 0% 100% / 0.5) solid 2px;
+}
+
+.carousel_indicator.current-slide:hover {
+    background-color: hsl(0 0% 100% / 0.6);
+    border-radius: 100%;
+    transition: ease 0.5s;
+    scale: 1.5;
+}
+
+:root {
+    --bg: hsl(0, 0%, 92%);
+    --button-text: hsl(0 0% 100%);
+    --button-1-surface: hsl(223, 83%, 30%);
+    --button-2-surface: hsl(41,96%,56%);
+    --body-bg: hsl(0, 0%, 92%);
+    --nav-bg: linear-gradient(90deg, rgba(13,49,141,1) 0%, rgba(22,35,107,1) 50%, rgba(15,24,85,1) 100%);
+    --gradient: linear-gradient(90deg, rgba(0,191,255,1) 0%, rgba(7,144,232,1) 25%, rgba(14,97,209,1) 50%, rgba(20,50,186,1) 75%, rgba(27,3,163,1) 100%);
+    --gradient-scroll: linear-gradient(to bottom right, rgba(0,191,255,1) 0%, rgba(7,144,232,1) 25%, rgba(14,97,209,1) 50%, rgba(20,50,186,1) 75%, rgba(27,3,163,1) 100%);
+    --card-background: hsl(0, 0%, 100%);
+    --card-text: hsl(0, 0%, 100%);
+    --card-accent: hsl(223, 83%, 30%);
+}
+
+::-webkit-scrollbar {
+    width: .75em;
+}
+
+::-webkit-scrollbar-track {
+    background: #eaeaea;
+    border-radius: 100vw;
+    margin-block: .125em;
+}
+
+::-webkit-scrollbar-thumb {
+    border: .125em solid #eaeaea;
+    border-radius: 100vw;
+    background-image: var(--gradient-scroll);
+    background-size: 400%;
+    animation: thumb-animation 1s infinite alternate;
+}
+* {
+    box-sizing: border-box;
+}
+html {
+    font-family: "Arial", sans-serif;
+    background-image: var(--gradient);
+    background-size: 400%;
+    animation: big-animation 20s infinite alternate;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    font-size: 1.25rem;
+    background: var(--body-bg);
+    color: black;
+    display: flex;
+    flex-direction: column; /* Change to flex-column */
+    gap: 4rem;
+    min-height: 100vh; /* Ensure the body expands to fit the viewport height */
+    overflow-y: auto;  /* Allow vertical overflow */
+    background: transparent;
+}
+
+.footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px; 
+    background: white;
+    place-items: center;
+    box-shadow: inset 0px 0px 20px rgba(0,0,0,0.5);
+    left: 0; /* Ensure it spans the entire width */
+    z-index: 1000; /* Ensure it is on top of other elements */
+    border-radius: 20px;
+    margin-top: 350px; /* Added margin-bottom */
+}
+
+.button {
+    margin-top: 10px;
+    margin: 10px;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: underline;
+    color: transparent;
+    background-image: var(--gradient);
+    background-clip: text;
+    padding: .5em 1.25em;
+    font-size: 30px;
+    animation: big-animation 20s infinite alternate;
+    background-size: 400%;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: scale 500ms ease;
+}
+
+.button:hover,
+.button:focus {
+    color: white;
+    background-clip: unset;
+    background-image: var(--gradient);
+    animation: big-animation 20s infinite alternate;
+    background-size: 400%;
+    scale: 1.1;
+}
+
+h1 {
+    position: relative;
+    margin: 0 0 0.5em;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 4rem;
+    line-height: 0.8;
+    display: inline-block;
+    background-image: var(--gradient); /* Apply gradient background */
+    background-size: 400%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* Ensure the text color is transparent to show the background */
+    animation: big-animation 20s infinite alternate;
+}
+
+section {
+    background-color: #eaeaea;
+    padding: 50px 40px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 40px;
+    background: white;
+    margin-bottom: 50px;
+    border-radius: 20px;
+    box-shadow: inset 0px 0px 20px rgba(0,0,0,0.5);
+    left: 0;
+    right: 0;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    flex: 1; /* Ensure main content takes up remaining space */
+}
+.blanksapce {
+    opacity: 0;
+}
+@keyframes big-animation {
+    0% {
+        background-position: left;
+    }
+    100% {
+        background-position: right;
+    }
+}
+
+@keyframes thumb-animation {
+    0% {
+        background-position: left;
+    }
+    100% {
+        background-position: right;
+    }
+}
+
+.is-hidden {
+    display: none;
+}

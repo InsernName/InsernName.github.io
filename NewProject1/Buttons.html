@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="view-transition" content="same-origin" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+    <link rel="stylesheet" type="text/css" href="css/buttons.css">
+    <script src="js/buttons.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-list">
+                <li>
+                    <a href="Home.html" aria-current="page">Home</a>
+                </li>
+                <li>
+                    <a href="Carousel.html">Carousel</a>
+                </li>
+                <li>
+                    <a href="Accordion.html">Accordion</a>
+                </li>
+                <li>
+                    <a href="Card.html">Card</a>
+                </li>
+                <li>
+                    <a href="Catalogue.html">Catalogue</a>
+                </li>
+                <li class="active">
+                  <a href="Buttons.html">Buttons</a>
+              </li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+    <a href="#">
+        <button class="glassy-button"><span>Button</span></button>
+    </a>
+    <a href="#">
+        <button class="neon-button"><span>Button</span></button>
+    </a>
+    <div class="glow-buttons">
+    <button class="button glow-effect">
+       Button
+        <svg class="glow-container">
+          <rect pathLength="100" stroke-linecap="round" class="glow-blur"></rect>
+          <rect pathLength="100" stroke-linecap="round" class="glow-line"></rect>
+        </svg>
+      </button>
+      
+      <button class="button glow-effect" data-glow-animation="false">
+        Button
+        <svg class="glow-container">
+          <rect pathLength="100" stroke-linecap="round" class="glow-blur"></rect>
+          <rect pathLength="100" stroke-linecap="round" class="glow-line"></rect>
+        </svg>
+      </button>
+      
+      <button class="button glow-effect" data-glow-offset="true">
+        Button
+        <svg class="glow-container">
+          <rect pathLength="100" stroke-linecap="round" class="glow-blur"></rect>
+          <rect pathLength="100" stroke-linecap="round" class="glow-line"></rect>
+        </svg>
+      </button>
+      
+      <div class="avatar glow-effect" data-glow-animation="grow">
+        <img src="images/Andrew-webster.webp" alt="">
+        <svg class="glow-container">
+          <rect pathLength="100" stroke-linecap="round" class="glow-blur"></rect>
+          <rect pathLength="100" stroke-linecap="round" class="glow-line"></rect>
+        </svg>
+      </div>
+    </div>
+</section>
+</body>
+</html>

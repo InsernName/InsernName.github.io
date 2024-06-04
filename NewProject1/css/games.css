@@ -1,0 +1,107 @@
+:root {
+    --body-bg: hsl(0, 0%, 92%);
+    --nav-bg: hsl(224, 80%, 20%);
+}
+* {
+    box-sizing: border-box;
+}
+html {
+    font-family: "Arial", sans-serif;
+}
+body {
+    min-height: 100vh;
+    margin: 0;
+    font-size: 1.25rem;
+    background: var(--body-bg);
+    color: black;
+    display: grid;
+    grid-template-columns: 15rem 1fr;
+    gap: 4rem;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    max-height: 100vh;
+    background-color: var(--nav-bg);
+}
+
+.nav-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    display: grid;
+    gap: 4rem;
+    padding-block: 2rem;
+    font: 2rem;
+}
+
+.nav-list li {
+    padding: 1rem 2rem;
+    margin-left: 2rem;
+    border-radius: 100vw 0 0 100vw;
+}
+
+.nav-list li.active {
+    view-transition-name: activeNavTab;
+    background-color: var(--body-bg);
+    color: #000;
+    position: relative;
+}
+
+.nav-list li::nth-child(1) a {
+    view-transition-name: navLink-1;
+}
+
+.nav-list li::nth-child(2) a {
+    view-transition-name: navLink-1;
+}
+
+.nav-list li::nth-child(3) a {
+    view-transition-name: navLink-1;
+}
+
+.nav-list li::nth-child(4) a {
+    view-transition-name: navLink-1;
+}
+
+::view-transition-group(activeNavTab) {
+    animation-duration: 500ms;
+    animation-timing-function: ease;
+}
+
+.nav-list li.active::before,
+.nav-list li.active::after {
+    --border-radius: 2rem;
+    
+    content: '';
+    position: absolute;
+    width: var(--border-radius);
+    height: var(--border-radius);
+    right: 0;
+    background: var(--nav-bg);
+}
+
+.nav-list li.active::before {
+    top: calc(var(--border-radius) * -1);
+    border-radius: 0 0 100vw 0;
+    box-shadow: 10px 10px 0 10px var(--body-bg);  
+}
+.nav-list li.active::after {
+    bottom: calc(var(--border-radius) * -1);
+    border-radius: 0 100vw 0 0;
+    box-shadow: 10px -10px 0 10px var(--body-bg);
+}
+
+.nav-list li.active a{
+    color: #000;
+}
+
+.nav-list a {
+    color: #fff;
+    display: block;
+    text-decoration: none;
+    position: relative;
+    z-index: 10;
+}

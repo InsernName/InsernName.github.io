@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Project</title>
+        <meta charset="UTF-8">
+        <meta name="view-transition" content="same-origin" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/carousel.css">
+    </head>
+    <body>
+        <header>
+                <nav>
+                    <ul class="nav-list">
+                        <li>
+                            <a href="Home.html" aria-current="page">Home</a>
+                        </li>
+                        <li class="active">
+                            <a href="Carousel.html">Carousel</a>
+                        </li>
+                        <li>
+                            <a href="Accordion.html">Accordion</a>
+                        </li>
+                        <li>
+                            <a href="Card.html">Card</a>
+                        </li>
+                        <li>
+                            <a href="Catalogue.html">Catalogue</a>
+                        </li>
+                    </ul>
+                </nav>
+    </header>
+<div class="carousel">
+    <button class="carousel_button carousel_button--left is-hidden">
+        <img src="Images/arrow-left.svg" alt="">
+    </button>
+
+    <div class="carousel_track-container">
+        <ul class="carousel_track">
+            <li class="carousel_slide current-slide">
+                <img class="carousel_image" src="Images/Christopher-luxon.jpg" alt="">
+            </li>
+            <li class="carousel_slide">
+                <img class="carousel_image" src="Images/Chris-hipkins.webp" alt="">
+            </li>
+            <li class="carousel_slide">
+                <img class="carousel_image" src="Images/Jacinda-ardern.jpg" alt="">
+            </li>
+            <li class="carousel_slide">
+                <img class="carousel_image" src="Images/Judith-collins.webp" alt="">
+            </li>
+            <li class="carousel_slide">
+                <img class="carousel_image" src="Images/Andrew-webster.webp" alt="">
+            </li>
+            <li class="carousel_slide">
+                <img class="carousel_image" src="Images/Ed-Sheeran.jpeg" alt="">
+            </li>
+        </ul>
+    </div>
+
+    <button class="carousel_button carousel_button--right">
+        <img src="Images/arrow-right.svg" alt="">
+    </button>
+
+    <div class="carousel_nav">
+        <button class="carousel_indicator current-slide"></button>
+        <button class="carousel_indicator"></button>
+        <button class="carousel_indicator"></button>
+        <button class="carousel_indicator"></button>
+        <button class="carousel_indicator"></button>
+        <button class="carousel_indicator"></button>
+    </div>
+</div>
+<script src="js/carousel.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</body>
+</html>
